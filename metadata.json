@@ -1,0 +1,5 @@
+{
+  "name": "Gemini: JSON Prompting & Veo JSON Hack",
+  "description": "An advanced tool to demonstrate structured JSON output from Gemini using response schemas, and a creative 'hack' to guide Veo video generation with detailed JSON-formatted prompts.",
+  "requestFramePermissions": []
+}

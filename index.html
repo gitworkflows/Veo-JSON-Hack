@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini: JSON Prompting & Veo JSON Hack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Run this script immediately to prevent FOUC
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <style>
+      /* For Webkit-based browsers (Chrome, Safari) */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: hsl(220 13% 91%); /* bg-gray-200 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: hsl(220 9% 45%); /* bg-gray-600 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: hsl(215 9% 51%); /* bg-gray-500 */
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: hsl(222 47% 11%); /* bg-gray-900 */
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: hsl(215 14% 34%); /* bg-gray-700 */
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: hsl(217 19% 27%); /* bg-gray-600 */
+      }
+      @keyframes shake-horizontal {
+        10%, 90% { transform: translateX(-1px); }
+        20%, 80% { transform: translateX(2px); }
+        30%, 50%, 70% { transform: translateX(-4px); }
+        40%, 60% { transform: translateX(4px); }
+      }
+      .animate-shake {
+        animation: shake-horizontal 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      }
+      @keyframes subtle-glow {
+        0%, 100% { box-shadow: 0 0 8px -4px var(--glow-color); }
+        50% { box-shadow: 0 0 12px 0px var(--glow-color); }
+      }
+      .animate-glow {
+        --glow-color: rgba(99, 102, 241, 0.5); /* indigo-500 */
+        animation: subtle-glow 2.5s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100 dark:bg-gray-950 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
